@@ -1,0 +1,152 @@
+代码块1：
+给几个连续的I/O口 ——> 定义接口 ——> 代码模式：
+int startPin = 2;
+int endPin = 7;
+void setup(){
+  for(int i=startPin; i<=endPin;i++){
+    pinMode(i,OUTPUT);
+}
+关键点：定义两个常量，定义一个变量，使用for循环和pinMode()函数
+
+
+代码块2：
+给几个连续的I/O口——>定义数值——>代码模式：
+int startPin = 2;
+int endPin = 7;
+for(int i=startPin; i<=enPin; i++){
+  digitalWrite(i,LOW);
+}
+关键点：定义两个常量，定义一个变量，使用for循环和digitalWrite()函数
+
+
+代码块3：
+以某个数值为周期——>周期性定义I/O口的数值——>代码模式：
+int startPin = 2;
+int endPin = 7;
+int index = 0;
+
+void loop(){
+digitalWrite(startPin + index,HIGH);
+index = (index + 1) %(endPin-startPin+1);
+}
+关键点：定义两个常量，一个变量，使用loop(){}循环、digitalWrite函数、【变量=（变量+1）%周期】公式
+
+
+代码块4：
+设置数值I/O口的模式——>输出为OUTPUT：
+int ledPin = 5;
+pinMode(ledPin,OUTPUT);
+关键点：定义一个常量，使用pinMode（常量，OUTPUT）
+
+
+代码块5：
+设定延时时间——>2000 = 2秒：
+delay(2000);
+关键点：使用delay()函数
+
+
+代码块6：
+设定引脚电压为 HIGH——>5V：
+int ledPin = 5;
+digitalWrite(ledPin,HIGH);
+关键点：使用digitalWrite(常量,HIGH)
+
+
+代码块7：
+设定引脚电压为 LOW——> 0V：
+int ledPin = 5;
+digitalWrite(ledPin,LOW);
+关键点：使用 digitalWrite(常量,LOW)
+
+
+代码块8：
+设置——>控制 LED的——>数字 I/O脚：
+int ledPin = 5;
+关键点：使用 int和一个常量名
+
+
+代码块9：
+打开串口——>设置波特率为 9600bps：
+setup(){
+Serial.begin(9600);
+}
+关键点：使用setup()和Serial.begin()函数
+
+代码块10：
+数据输出到——>串口显示器上：
+void loop(){
+Serial.println("xx");
+}
+关键点：使用loop()和Serial.println()函数
+
+
+代码块11：
+声明——>变量及——>接口——>名称：
+int val;
+int ledPin = 13;
+关键点：不带Pin和带Pin
+
+
+代码块12：
+在程序开始时——>使用——>可以初始化——>变量——>接口模式——>启用库：
+setup(){
+pinMode(ledPin,OUTPUT);
+}
+关键点：使用setup()和pinMode()函数
+
+
+代码块13：
+在setup()函数——>之后——>即初始化——>之后——>让程序循环地——>被执行——>来运转Arduino：
+loop(){}
+关键点：使用loop()函数
+
+
+代码块14：
+接口定义为——>输入或——>输出接口——用在setup()函数里：
+pinMode(接口名称,OUTPUT);
+或
+pinMode(接口名称,INPUT);
+关键点：使用setup()和pinMode()函数
+
+
+代码块15：
+将数字接口值——>置高或——>低：
+digitalWrite(接口名称,HIGH);
+或
+digitalWrite(接口名称,LOW);
+关键点：使用digitalWrite()函数
+
+
+代码块16：
+给一个接口——>写入——>模拟值——>对于ATmega168芯片——>该函数——>工作于——>3/5/6/9/10/11接口——>对于ATmega8芯片——>该函数——>工作于——>9/10/11:
+analogWrite(接口名称,数值);
+关键点：使用analogWrite()函数
+
+
+代码块17：
+从指定的——>模拟接口——>读取值——>Arduino——>对该模拟值——>进行——>10-bit的——>数字转换——>将输入的——>0~5V电压值——>转换为——>0~1023的整数值：
+analogRead(接口名称);
+关键点：使用analogRead()函数
+
+
+代码块18：
+设置串行——>每秒——>传输数据的——>速率——>波特率——>同计算机——>通讯时——>使用值为——>【300】——>【1200】——>【2400】——>【4800】——>【9600】——>
+【14400】——>【19200】——>【28800】——>【38400】——>【57600】——>【115200】——>可使用其他值——>0号和——>1号接口——>要求特殊波特率——>用在setup()函数里：
+Serial.begin();
+关键点：使用Serial.begin()函数
+
+
+代码19：
+读取——>持续输入的——>数据：
+Serial.read()
+关键点：使用Serial.read()函数
+
+
+代码20：
+从串行端口——>输出数据——>Serial.print(数据)——>默认为——>十进制——>等于Serial.print(数据,DEC)：
+Serial.print(数据,数据的进制)
+
+
+代码21：
+从串行端口——>输出数据——>跟随一个回车和——>一个换行符——>这个函数——>所取得的值——>与Serial.print()——>一样：
+Serial.println(数据,数据的进制)
